@@ -12,33 +12,44 @@
 
 *{margin:auto; padding-top:0px;  }
 body {font-family:Verdana, Geneva, Tahoma, sans-serif;background-color: lightblue;}
-
- h1{font: size 3rem;}
-  td, li{text-align:left;}
-        
-        .card {box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); max-width: 300px;  margin: auto; text-align: center; font-family: arial;background-color: white;     }
-        a.readmore {text-decoration: none; font-size: 22px;}
-        p.readmore{background-color:black}
-        a.readmore{color:white}
-
 header, #theDate{text-align: center; background-color: yellow;}
-#title{font-family: 'Bree Serif', serif; }
-#my3people{text-align: center; width:100%; }
-div.card{float:left;margin-left:20px; margin-right:15%; margin-bottom:20px; }
-.bio{margin:8px;}
-.subtitle{font-family: 'Bree Serif', serif;}
+#title{font-family: 'Bree Serif', serif; font-size:3rem;}
 section{width:100%; padding-bottom:20px;padding-top:20px;}
 #one{background-color: lightblue; }
 #two{background-color:aquamarine; }
 #three{background-color: lightpink;}
 #four{background-color: mediumpurple;}
 #weirdTable{float:left; margin-top:40px;}
+td, li{text-align:left;}
+
+.bio{margin:8px;}
+.subtitle{font-family: 'Bree Serif', serif;}  
+a.readmore {text-decoration: none; font-size: 22px;color:white}
+p.readmore{background-color:black}
+   
+
 .content{padding-left:25px;}
 th{text-align:left}
 td{padding:5px;}
 h2, h3, h4, h5{margin-top:20px;}
-#card1, #card2, #card3 {float:left; margin-right:15%}
-#card1{margin-left:5%;}
+
+
+* {    box-sizing: border-box;  }  
+  .column {    float: left;    width: 30%;   margin-left: 1%; background: white; 
+    border:solid 1px black; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+  
+  /* Clearfix (clear floats) */
+.row::after {    content: "";     clear: both;    display: table;  }
+.boxContent{padding:8px;}
+.readmore, .subtitle{text-align: center;}
+.responsive {    width: 100%;    height: auto; }
+
+
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
 </style>
 </head>
 <body>
@@ -53,57 +64,63 @@ h2, h3, h4, h5{margin-top:20px;}
     </center>
 </header>
 
-
 <section id="one">
-<div id="my3people">
-
-<div class="card" id="card1">
-    <img src="matt-cutts.png" alt="Matt Cutts" style="width:100%">
-    <h1 class="subtitle">Matt Cutts</h1>
-   <p class="bio">Matthew Cutts (born 1972 or 1973) is an American software engineer. Cutts is the former Administrator of the United States Digital Service. He was first appointed as acting administrator, to later be confirmed as full administrator in October 2018. Matt is a really nice guy and always smiling. I'm really glad I got to meet him. </p>
- 
-    <div style="margin: 24px 0;">
-        <ul>
-            <li>Worked at Google </li>
-            <li>Has been a Speaker at SMX</li>
-            <li>Wears Glasses</li>
-        </ul>
-    </div>
-    <p class="readmore">   <a class="readmore" href="https://en.wikipedia.org/wiki/Matt_Cutts" target="_blank">Read More</a></p>
-  </div>
-
-  <div class="card"  id="card2">
-    <img src="danny-sullivan.png" alt="Danny Sullivan" style="width:100%">
-    <h1 class="subtitle">Danny Sullivan</h1>
-   <p class="bio">Danny Sullivan is an American technologist, journalist, and entrepreneur. He is the founder of Search Engine Watch in 1997, one of the earliest online publications about search engine marketing. He also launched Search Engine Strategies, one of the earliest search marketing trade shows. </p>
-       
-     <div style="margin: 24px 0;">
-        <ul>
-            <li>Works at Google </li>
-            <li>Has been a Speaker at SMX</li>
-            <li>Has brownish/gray hair</li>
-        </ul>
-    </div>
-    <p class="readmore">   <a class="readmore" href="https://en.wikipedia.org/wiki/Danny_Sullivan_(technologist)" target="_blank">Read More</a></p>
-  </div>
-
-
-  <div class="card"  id="card3">
-    <img src="gary-illyes.png" alt="Gary Illyes" style="width:100%">
-    <h1  class="subtitle">Gary Illyes</h1>
-    <p class="bio">Gary Illyes is Google Webmaster Trends Analyst at Google, but according to his Twitter bio he's also the House Elf and Chief of Sunshine and Happiness at Google. Gary's dedicated to creating a better search experience for users by helping webmasters create amazing websites. I met Gary while at the Google Dance party. </p>
-   
-    <div style="margin: 24px 0;">
-        <ul>
-            <li>Works at Google </li>
-            <li>Has been a Speaker at SMX</li>
-            <li>Has dark brown / black hair</li>
-        </ul>
-    </div>
-    <p class="readmore">   <a class="readmore" href="https://www.ungagged.com/speaker/gary-illyes/" target="_blank">Read More</a></p>
-  </div>
-  <div style="clear:both;"></div>
-</div>
+    <div>
+        <!--3 cards here-->
+        <div class="row">
+            <div class="column">
+              <img src="matt-cutts.png" alt="Matt Cutts" style="width:100%">
+              <div class="boxContent">
+              <h1 class="subtitle">Matt Cutts</h1>
+              <p class="bio">Matthew Cutts (born 1972 or 1973) is an American software engineer. Cutts is the former Administrator of the United States Digital Service. He was first appointed as acting administrator, to later be confirmed as full administrator in October 2018. Matt is a really nice guy and always smiling. I'm really glad I got to meet him. </p>
+            
+               <div style="margin: 24px 0;">
+                   <ul>
+                       <li>Worked at Google </li>
+                       <li>Has been a Speaker at SMX</li>
+                       <li>Wears Glasses</li>
+                   </ul>
+               </div>
+            </div>
+               <p class="readmore">   <a class="readmore" href="https://en.wikipedia.org/wiki/Matt_Cutts" target="_blank">Read More</a></p>
+            
+            </div>
+            <div class="column">
+                <div class="boxContent">
+                <img src="danny-sullivan.png" alt="Danny Sullivan" style="width:100%">
+              <h1 class="subtitle">Danny Sullivan</h1>
+           <p class="bio">Danny Sullivan is an American technologist, journalist, and entrepreneur. He is the founder of Search Engine Watch in 1997, one of the earliest online publications about search engine marketing. He also launched Search Engine Strategies, one of the earliest search marketing trade shows. I met Danny while on the Google complex.</p>
+               
+             <div style="margin: 24px 0;">
+                <ul>
+                    <li>Works at Google </li>
+                    <li>Has been a Speaker at SMX</li>
+                    <li>Has brownish/gray hair</li>
+                </ul>
+            </div>
+            </div>
+            <p class="readmore">   <a class="readmore" href="https://en.wikipedia.org/wiki/Danny_Sullivan_(technologist)" target="_blank">Read More</a></p>
+        
+            </div>
+            <div class="column">
+              <img src="gary-illyes.png" alt="Gary Illyes" style="width:100%">
+              <div class="boxContent">
+              <h1  class="subtitle">Gary Illyes</h1>
+              <p class="bio">Gary Illyes is Google Webmaster Trends Analyst at Google, but according to his Twitter bio he's also the House Elf and Chief of Sunshine and Happiness at Google. Gary's dedicated to creating a better search experience for users by helping webmasters create amazing websites. I met Gary while at the Google Dance party. </p>
+             
+              <div style="margin: 24px 0;">
+                  <ul>
+                      <li>Works at Google </li>
+                      <li>Has been a Speaker at SMX</li>
+                      <li>Has dark brown / black hair</li>
+                  </ul>
+              </div>
+            </div>
+              <p class="readmore">   <a class="readmore" href="https://www.ungagged.com/speaker/gary-illyes/" target="_blank">Read More</a></p>
+          
+            </div>
+          </div>
+        </div>
 
 </section>
 
@@ -135,7 +152,7 @@ h2, h3, h4, h5{margin-top:20px;}
         <h2>Favorite Movie</h2>
         <h3>Star Wars</h3>
         <poster>
-            <img src="star-wars.jpg" alt="movie" />
+            <img src="star-wars.jpg" alt="movie" class="responsive" />
         </poster>
         <p>Star Wars is an American epic space-opera[1] multimedia franchise created by George Lucas, which began with the eponymous 1977 film[b] and quickly became a worldwide pop-culture phenomenon. The franchise has been expanded into various films and other media, including television series, video games, novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing fictional universe.[c] In 2020, its total value was estimated at US$70 billion, and it is currently the fifth-highest-grossing media franchise of all time. - Wikipedia</p>
 <h4>Main Characters</h4>
